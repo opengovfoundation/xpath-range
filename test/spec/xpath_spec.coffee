@@ -1,6 +1,7 @@
 h = require('helpers')
 $ = require('jquery')
 xpath = require('../../src/xpath')
+assert = require('assertive-chai').assert
 
 describe 'xpath', ->
   $fix = null

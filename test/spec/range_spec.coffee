@@ -1,5 +1,5 @@
 h = require('helpers')
-
+assert = require('assertive-chai').assert
 Range = require('../../src/range')
 Util = require('../../src/util')
 $ = require('jquery')

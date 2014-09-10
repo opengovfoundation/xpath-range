@@ -1,6 +1,7 @@
 h = require('helpers')
 $ = require('jquery')
 Util = require('../../src/util')
+assert = require('assertive-chai').assert
 
 describe 'Util.flatten()', ->
   it "flattens the contents of an Array", ->
