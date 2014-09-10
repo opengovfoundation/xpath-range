@@ -33,6 +33,12 @@ testData = [
   [ "/h2[2]",    0,"/p[4]", 0, "Header Level 2\n\n\n  Mauris lacinia ipsum nulla, id iaculis quam egestas quis.\n\n\n", "No text node at the end and offset 0"]
 ]
 
+# Overrides for IE, due to how to DOM text nodes are handled.
+# https://github.com/openannotation/xpath-range/issues/5
+if /MSIE [89]/.test( window.navigator.userAgent )
+  testData[6]  = [ 8,           7,   9,          11,  "Level 2Lorem ipsum",                        "Spanning multiple nodes, textNode refs." ]
+  testData[25] = [ "/h2[2]",    0,"/p[4]", 0, "Header Level 2Mauris lacinia ipsum nulla, id iaculis quam egestas quis. ", "No text node at the end and offset 0"]
+
 describe 'Range', ->
   r = null
   mockSelection = null
